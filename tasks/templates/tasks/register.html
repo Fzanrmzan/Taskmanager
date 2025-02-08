@@ -1,0 +1,35 @@
+{% extends 'tasks/base.html' %}
+{% block title %}Signup{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card">
+        <h2 class="text-center neon-text">Sign Up</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" name="username" class="form-control" placeholder="Enter username" required>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" class="form-control" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password1" class="form-control" placeholder="Enter password" required>
+            </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" name="password2" class="form-control" placeholder="Confirm password" required>
+            </div>
+            <div class="form-group mt-4 mb-4">
+                <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+            </div>
+        </form>
+        <p class="text-center mt-3">
+            Already have an account? <a href="{% url 'login' %}">Login</a>
+        </p>
+    </div>
+</div>
+{% endblock %}
